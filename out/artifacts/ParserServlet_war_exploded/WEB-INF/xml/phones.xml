@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding='UTF-8' ?>
+<ns:phones xmlns:ns="http://parsing.com/phones">
+<phone name = "iPhone_5" size = "4.0">
+	<manuf>Apple</manuf>
+	<os>iOS</os>
+	<display>Retina display</display>
+	<SD>no</SD>
+    <manufDate>2009</manufDate>
+</phone>
+<phone name = "Xperia_Z" size = "5.0">
+	<manuf>Sony</manuf>
+	<os>Android 4.1.2</os>
+	<display>TFT</display>
+	<SD>microSD</SD>
+    <manufDate>2008</manufDate>
+</phone>
+<phone name = "Optimus_4X_HD" size = "4.7">
+	<manuf>LG</manuf>
+	<os>Android 4.0</os>
+	<display>HD-IPS</display>
+	<SD>microSD</SD>
+    <manufDate>2007</manufDate>
+</phone>
+<phone name = "Lumia_800" size = "9.7">
+	<manuf>Nokia</manuf>
+	<os>Windows Phone 7.5</os>
+	<display>TFT</display>
+	<SD>no</SD>
+    <manufDate>2010</manufDate>
+</phone>
+</ns:phones>

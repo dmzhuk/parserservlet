@@ -1,0 +1,56 @@
+<schema xmlns = "http://www.w3.org/2001/XMLSchema" targetNamespace="http://parsing.com/phones" xmlns:tns="http://parsing.com/phones">
+	<element name = "phones">
+	<complexType>
+	 <sequence>
+         <element name="phone" minOccurs = "0" maxOccurs="unbounded" type="tns:extendedPhoneType"/>
+      </sequence>
+	  </complexType>
+	</element>
+<complexType name="extendedPhoneType">
+    <complexContent>
+        <extension base = "tns:phoneType">
+            <sequence>
+                <element name="manufDate" type = "tns:DateType"/>
+            </sequence>
+        </extension>
+    </complexContent>
+</complexType>
+
+<simpleType name = "DateType">
+    <restriction base = "integer">
+        <minInclusive value="1950"/>
+        <maxInclusive value="2900"/>
+    </restriction>
+</simpleType>
+<complexType name = "phoneType">
+	<sequence>
+		<element name = "manuf" type = "string"/>
+		<element name = "os" type = "tns:OSString"/>
+		<element name = "display" type = "string"/>
+		<element name = "SD" type = "tns:SDString"/>
+	</sequence>
+	<attribute name = "name" type = "ID" />
+	<attribute name = "size" type = "tns:SizeDouble"/>
+</complexType>
+
+<simpleType name = "OSString">
+	<restriction base = "string">
+		<pattern value="[\w ]+[\d.]*"/>
+	</restriction>
+</simpleType>
+<simpleType name = "SizeDouble">
+	<restriction base = "double">
+		<minInclusive value = "0.1"/>
+		<maxInclusive value = "10.0"/>
+	</restriction>
+</simpleType>
+<simpleType name = "SDString">
+	<restriction base = "string">
+		<enumeration value = "microSD"/>
+		<enumeration value = "microSDHC"/>
+		<enumeration value = "microSDXC"/>
+		<enumeration value = "miniSD"/>
+		<enumeration value = "no"/>
+	</restriction>
+</simpleType>
+</schema>
